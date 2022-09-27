@@ -67,9 +67,6 @@ class Comment(UserMixin, db.Model):
     post = relationship("BlogPost", back_populates="comment")
 
 
-db.create_all()
-
-
 def admin_only(func):
     @wraps(func)
     def decorated_function(*args, **kwargs):
